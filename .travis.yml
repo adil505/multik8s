@@ -17,6 +17,7 @@ before_install:
   - gcloud container clusters get-credentials multik8s-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t astelware/react-test -f ./client/Dockerfile.dev ./client
+  - docker push astelware/react-test
     
 script:
   - docker run -e CI=true astelware/react-test npm run test
