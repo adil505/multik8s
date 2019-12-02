@@ -1,6 +1,6 @@
-docker build -t astelware/multi-docker-client:latest -t astelware/multi-docker-client:$SHA ./client/Dockerfile ./client
-docker build -t astelware/multi-docker-server:latest -t astelware/multi-docker-server:$SHA ./server/Dockerfile ./server
-docker build -t astelware/multi-docker-worker:latest -t astelware/multi-docker-worker:$SHA ./worker/Dockerfile ./worker
+docker build -t astelware/multi-docker-client:latest -t astelware/multi-docker-client:$SHA -f ./client/Dockerfile ./client
+docker build -t astelware/multi-docker-server:latest -t astelware/multi-docker-server:$SHA -f ./server/Dockerfile ./server
+docker build -t astelware/multi-docker-worker:latest -t astelware/multi-docker-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push astelware/multi-docker-client:latest
 docker push astelware/multi-docker-server:latest
 docker push astelware/multi-docker-worker:latest
